@@ -1,4 +1,4 @@
-baseURL = 'https://rfaychen.github.io/'
+baseURL = 'https://www.rfaychen.com/'
 languageCode = 'zh-tw'
 title = 'My New Hugo Site'
 theme = "tale"
