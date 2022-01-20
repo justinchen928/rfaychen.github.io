@@ -23,12 +23,22 @@
 </nav>
 <main>
 <div class=catalogue>
-<a href=https://www.rfaychen.com/posts/my-first-post/ class=catalogue-item>
+<a href=https://www.rfaychen.com/posts/ssh-remote-server-using-private-key/ class=catalogue-item>
 <div>
-<time datetime="2022-01-16 18:10:38 +0800 +0800" class=catalogue-time>January 16, 2022</time>
-<h2 class=catalogue-title>My First Post</h2>
+<time datetime="2019-12-29 22:10:38 +0800 +0800" class=catalogue-time>December 29, 2019</time>
+<h2 class=catalogue-title>透過 SSH key pair 登入遠端伺服器</h2>
 <div class=catalogue-line></div>
 <p>
+前言 這篇文件在介紹如何建立ssh的金鑰組並透過這組金鑰登入遠端的伺服器，來解決使用VS Code直接遠端開發時會需要一直輸入密碼的困擾。
+1. 建立金鑰 首先要建立一組金鑰，打開terminal輸入
+ssh-keygen -t ed25519 -t可以指定演算法。 接著會詢問你要儲存的地方和名稱，直接按enter跳過的話，預設會存在使用者目錄下的.ssh目錄下。 名稱會是：
+public key id_ed25519.pub private key id_ed25519 同時還會詢問你是否要設定passphrase，像是通關密語。有設定的話，使用這把key登入時就要輸入。這邊可以直接按enter跳過。
+2. 放到遠端伺服器 當建立好public key和private key後，接下來只要透過ssh-copy-id將public key安裝到遠端伺服器上就完成了。
+ssh-copy-id -i ~/.ssh/your_key.pub user@host user@host改成你的帳號和遠端伺服器的ip或domain。
+3. 使用private key登入遠端伺服器 當上述步驟都完成後可以直接透過 -i 指定private key的位置ssh登入遠端伺服器。
+ssh -i ~/.ssh/your_key user@host 人生不如意十之八九 當前兩步驟做完後第三步驟卻還是無法登入時可以看看遠端伺服器的sshd可能沒有設定接受public key的驗證方式，檢查伺服器的/etc/ssh/sshd_config檔案中有看到下面這行
+PubkeyAuthentication yes 如果是 false 的話改完重啟sshd服務，再試試看。 如果還是不行，在伺服器端可以使用
+sshd -d 開啟debug模式，看看是哪邊的問題。詳細內容參考 sshd
 </p>
 </div>
 </a>
@@ -39,7 +49,7 @@
 </main>
 <footer>
 <span>
-&copy; <time datetime="2022-01-16 10:20:38.387821079 +0000 UTC m=+0.041821128">2022</time> . Made with <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/EmielH/tale-hugo/>Tale</a> theme.
+&copy; <time datetime="2022-01-20 15:10:40.759146611 +0000 UTC m=+0.044333478">2022</time> . Made with <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/EmielH/tale-hugo/>Tale</a> theme.
 </span>
 </footer>
 </body>
