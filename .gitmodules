@@ -1,3 +1,6 @@
 [submodule "themes/tale"]
 	path = themes/tale
 	url = https://github.com/rfaychen/tale-hugo.git
+[submodule "themes/hulga"]
+	path = themes/hulga
+	url = https://github.com/rfaychen/hugo-theme-hulga.git
