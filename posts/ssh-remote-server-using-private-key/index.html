@@ -1,40 +1,75 @@
-<!doctype html><html lang=zh-tw>
-<head>
+<!doctype html><html lang=en><head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>透過 SSH key pair 登入遠端伺服器 &#183; My New Hugo Site</title>
-<link rel=stylesheet href=/css/style.css>
-<link rel=stylesheet href=/css/fonts.css>
-<link rel=icon href=favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=/images/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/images/favicon-16x16.png>
-<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
-<link href rel=alternate type=application/rss+xml title="My New Hugo Site">
-</head>
-<body>
-<nav class=nav>
-<div class=nav-container>
-<a href=/>
-<h2 class=nav-title>My New Hugo Site</h2>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=msapplication-TileImage content="/ms-icon-144x144.png"><meta name=msapplication-TileColor content="#1793d0">
+<meta name=theme-color content="#1793d0"><title>透過 SSH key pair 登入遠端伺服器 | 404 Not Found</title>
+<meta property="og:title" content="透過 SSH key pair 登入遠端伺服器 - 404 Not Found">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-12-29T22:10:38+08:00">
+<meta property="article:modified_time" content="2019-12-29T22:10:38+08:00">
+<meta name=keywords content="HTML,hugo,CSS">
+<meta name=description content="透過 SSH key pair 登入遠端伺服器"><meta name=author content>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png>
+<link rel=icon type=image/png sizes=192x192 href=/android-icon-192x192.png>
+<link rel=apple-touch-icon sizes=57x57 href=/apple-icon-57x57.png>
+<link rel=apple-touch-icon sizes=60x60 href=/apple-icon-60x60.png>
+<link rel=apple-touch-icon sizes=72x72 href=/apple-icon-72x72.png>
+<link rel=apple-touch-icon sizes=76x76 href=/apple-icon-76x76.png>
+<link rel=apple-touch-icon sizes=114x114 href=/apple-icon-114x114.png>
+<link rel=apple-touch-icon sizes=120x120 href=/apple-icon-120x120.png>
+<link rel=apple-touch-icon sizes=144x144 href=/apple-icon-144x144.png>
+<link rel=apple-touch-icon sizes=152x152 href=/apple-icon-152x152.png>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-icon-180x180.png>
+<link rel=stylesheet type=text/css href=/css/hulga.min.css>
+<link rel=stylesheet type=text/css href=/css/hulga-dark.min.css media="(prefers-color-scheme: dark)">
+<link rel=manifest href=/manifest.json>
+</head><body>
+<div id=main><section class="hero is-primary shadow-hero is-bold">
+<div class=hero-head>
+<nav class="navbar is-primary">
+<div class=container>
+<div class=navbar-brand>
+<a class=navbar-item href=https://www.rfaychen.com/>
+404 Not Found
 </a>
-<ul>
-</ul>
+<a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+</div>
+<div class=navbar-menu id=navMenu>
+<div class=navbar-end>
+<a class=navbar-item href=/ title=index>首页</a>
+<a class=navbar-item href=/archives/ title=archives>归档</a>
+<a class=navbar-item href=/about/ title=about>关于</a>
+</div>
+</div>
 </div>
 </nav>
-<main>
-<div class=post>
-<div class=post-info>
-<span>Written by</span>
-<br>
-<span>on&nbsp;</span><time datetime="2019-12-29 22:10:38 +0800 +0800">December 29, 2019</time>
 </div>
-<h1 class=post-title>透過 SSH key pair 登入遠端伺服器</h1>
-<div class=post-line></div>
-<h2 id=前言>前言</h2>
+<div class=hero-body>
+<header class="container has-text-centered">
+<h1 class="title post-title">
+透過 SSH key pair 登入遠端伺服器
+</h1>
+<h2 class=subtitle><time class=post-meta>2019/12/29</time></h2>
+</header>
+</div>
+</section>
+<section class=section>
+<div class=container>
+<div class=columns>
+<div class="column is-1 is-hidden-mobile"></div>
+<div class="column is-8">
+<article class=content id=post-content><h2 id=前言>前言</h2>
 <p>這篇文件在介紹如何建立ssh的金鑰組並透過這組金鑰登入遠端的伺服器，來解決使用VS Code直接遠端開發時會需要一直輸入密碼的困擾。</p>
 <h2 id=1-建立金鑰>1. 建立金鑰</h2>
 <p>首先要建立一組金鑰，打開terminal輸入</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ssh-keygen -t ed25519
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ssh-keygen -t ed25519
 </code></pre></div><p><code>-t</code>可以指定演算法。
 接著會詢問你要儲存的地方和名稱，直接按enter跳過的話，預設會存在使用者目錄下的<code>.ssh</code>目錄下。
 名稱會是：</p>
@@ -45,27 +80,47 @@
 <p>同時還會詢問你是否要設定<code>passphrase</code>，像是通關密語。有設定的話，使用這把key登入時就要輸入。這邊可以直接按enter跳過。</p>
 <h2 id=2-放到遠端伺服器>2. 放到遠端伺服器</h2>
 <p>當建立好public key和private key後，接下來只要透過<code>ssh-copy-id</code>將public key安裝到遠端伺服器上就完成了。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ssh-copy-id -i ~/.ssh/your_key.pub user@host
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ssh-copy-id -i ~/.ssh/your_key.pub user@host
 </code></pre></div><p><code>user@host</code>改成你的帳號和遠端伺服器的ip或domain。</p>
 <h2 id=3-使用private-key登入遠端伺服器>3. 使用private key登入遠端伺服器</h2>
 <p>當上述步驟都完成後可以直接透過 <code>-i</code> 指定private key的位置ssh登入遠端伺服器。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ssh -i ~/.ssh/your_key user@host
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ssh -i ~/.ssh/your_key user@host
 </code></pre></div><h2 id=人生不如意十之八九>人生不如意十之八九</h2>
 <p>當前兩步驟做完後第三步驟卻還是無法登入時可以看看遠端伺服器的sshd可能沒有設定接受public key的驗證方式，檢查伺服器的<code>/etc/ssh/sshd_config</code>檔案中有看到下面這行</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>PubkeyAuthentication yes
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>PubkeyAuthentication yes
 </code></pre></div><p>如果是 <code>false</code> 的話改完重啟<code>sshd</code>服務，再試試看。
 如果還是不行，在伺服器端可以使用</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>sshd -d
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sshd -d
 </code></pre></div><p>開啟debug模式，看看是哪邊的問題。詳細內容參考 <a href=https://www.ssh.com/academy/ssh/sshd>sshd</a></p>
+</article>
 </div>
-<div class=pagination>
-<a href=# class=top>Top</a>
+<div class="column is-hidden-mobile">
+<div class=sidebar id=toc>
+<div class="post post-toc" id=post-toc>
 </div>
-</main>
-<footer>
-<span>
-&copy; <time datetime="2022-01-20 15:10:40.756662879 +0000 UTC m=+0.041849846">2022</time> . Made with <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/EmielH/tale-hugo/>Tale</a> theme.
-</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div><footer class=footer>
+<div class="content has-text-centered">
+<p>Powered by <a href=https://gohugo.io>Hugo</a>. Theme <a href=https://www.github.com/wlh320/hugo-theme-hulga>Hulga</a></p>
+<p>Copyright © 2020 wlh. All rights reserved.
+</p>
+</div>
 </footer>
+<script src=https://www.rfaychen.com/js/pwa.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js></script><script>addBackToTop({diameter:42,backgroundColor:"#1793d0",innerHTML:'<svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>',textColor:'#fff'})</script>
+<script type=text/javascript>document.addEventListener('DOMContentLoaded',()=>{const a=Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'),0);a.length>0&&a.forEach(a=>{a.addEventListener('click',()=>{const b=a.dataset.target,c=document.getElementById(b);a.classList.toggle('is-active'),c.classList.toggle('is-active')})})})</script>
+<link id=hlcss rel=stylesheet type=text/css>
+<script>var darkcss,lightcss;function addCss(a){var b=document.getElementById('hlcss');b.href=a}darkcss="https://www.rfaychen.com/css/monokai.css",lightcss="https://www.rfaychen.com/css/monokailight.css",window.matchMedia('(prefers-color-scheme)').media==='not all'?addCss(lightcss):window.matchMedia("(prefers-color-scheme: dark)").matches?addCss(darkcss):addCss(lightcss),window.matchMedia("(prefers-color-scheme: dark)").addListener(a=>a.matches&&addCss(darkcss)),window.matchMedia("(prefers-color-scheme: light)").addListener(a=>a.matches&&addCss(lightcss))</script>
+<script src=https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js></script><script>anchors.options={placement:'left',icon:'#'},anchors.add('.content h1, .content h2, .content h3')</script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity="sha256-tn6hZ2YGDv0w1/DaFL4MiUoXuAVclrtFZs13ch3TB9M=" crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity="sha256-1qhJwAgsSPVSSjlQVTewHS49eaoAbOz651dveUANVBI=" crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity="sha256-oEuQVLwO5Ii6subChtLbrY5gx7NDRU+UJJ9jvvau+FI=" crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}]})})</script>
+<link rel=stylesheet type=text/css href=https://www.rfaychen.com/css/toc.min.css><script src=https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js></script>
+<script>tocbot.init({tocSelector:'.post-toc',contentSelector:'#post-content',headingSelector:'h1, h2, h3',collapseDepth:0,scrollSmooth:!0,positionFixedSelector:'.post-toc',fixedSidebarOffset:273})</script>
 </body>
 </html>
