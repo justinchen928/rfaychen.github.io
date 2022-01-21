@@ -18,7 +18,7 @@ paginate = 10
   subtitle = "This is a subtitle"
 
   # copyright text on footer
-  copyright = "Copyright © 2020 wlh. All rights reserved."
+  copyright = "Copyright © 2022 wlh. All rights reserved."
 
   # enable katex rendering on every post page
   math = true
