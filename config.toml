@@ -69,3 +69,5 @@ paginate = 10
 [taxonomies]
 category = "categories"
 tag = "tags"
+
+googleAnalytics = "G-H6V37Y5E7Z"
