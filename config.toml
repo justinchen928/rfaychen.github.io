@@ -1,4 +1,4 @@
-baseURL = 'https://www.rfaychen.com/'
+baseURL = 'https://blog.rfaychen.com/'
 languageCode = 'en'
 DefaultContentLanguage = "zh-tw"
 title = '404 Not Found'
