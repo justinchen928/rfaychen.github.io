@@ -1,6 +1,8 @@
 ---
 title: "透過 SSH key pair 登入遠端伺服器"
 date: 2019-12-29T22:10:38+08:00
+categories: [tutorials]
+tags: [ssh]
 draft: false
 ---
 
