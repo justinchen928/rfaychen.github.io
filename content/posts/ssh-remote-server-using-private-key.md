@@ -4,6 +4,9 @@ date: 2019-12-29T22:10:38+08:00
 draft: false
 ---
 
+![authentication flow](https://www.ssh.com/hubfs/Imported_Blog_Media/SSH_simplified_protocol_diagram-2.png)
+*image from https://www.ssh.com/ssh*
+
 ## 前言
 這篇文件在介紹如何建立ssh的金鑰組並透過這組金鑰登入遠端的伺服器，來解決使用VS Code直接遠端開發時會需要一直輸入密碼的困擾。
 
