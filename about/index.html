@@ -3,13 +3,11 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=msapplication-TileImage content="/ms-icon-144x144.png"><meta name=msapplication-TileColor content="#1793d0">
-<meta name=theme-color content="#1793d0"><title>透過 SSH key pair 登入遠端伺服器 | 404 Not Found</title>
-<meta property="og:title" content="透過 SSH key pair 登入遠端伺服器 - 404 Not Found">
+<meta name=theme-color content="#1793d0"><title>陳智育 Justin Chen | Footprints</title>
+<meta property="og:title" content="陳智育 Justin Chen - Footprints">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2019-12-29T22:10:38+08:00">
-<meta property="article:modified_time" content="2019-12-29T22:10:38+08:00">
 <meta name=keywords content="HTML,hugo,CSS">
-<meta name=description content="透過 SSH key pair 登入遠端伺服器"><meta name=author content>
+<meta name=description content="陳智育 Justin Chen"><meta name=author content="Justin">
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png>
@@ -27,13 +25,14 @@
 <link rel=stylesheet type=text/css href=/css/hulga-dark.min.css media="(prefers-color-scheme: dark)">
 <link rel=manifest href=/manifest.json>
 </head><body>
-<div id=main><section class="hero is-primary shadow-hero is-bold">
+<div id=main>
+<section class="hero is-primary shadow-hero is-bold">
 <div class=hero-head>
 <nav class="navbar is-primary">
 <div class=container>
 <div class=navbar-brand>
 <a class=navbar-item href=https://blog.rfaychen.com/>
-404 Not Found
+Footprints
 </a>
 <a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false>
 <span aria-hidden=true></span>
@@ -43,9 +42,9 @@
 </div>
 <div class=navbar-menu id=navMenu>
 <div class=navbar-end>
-<a class=navbar-item href=/ title=index>首页</a>
-<a class=navbar-item href=/archives/ title=archives>归档</a>
-<a class=navbar-item href=/about/ title=about>关于</a>
+<a class=navbar-item href=/ title=home>Home</a>
+<a class=navbar-item href=/archives/ title=archives>Archive</a>
+<a class=navbar-item href=/about/ title=about>@智育</a>
 </div>
 </div>
 </div>
@@ -54,9 +53,9 @@
 <div class=hero-body>
 <header class="container has-text-centered">
 <h1 class="title post-title">
-透過 SSH key pair 登入遠端伺服器
+陳智育 Justin Chen
 </h1>
-<h2 class=subtitle><time class=post-meta>2019/12/29</time></h2>
+<h2 class=subtitle></h2>
 </header>
 </div>
 </section>
@@ -65,40 +64,8 @@
 <div class=columns>
 <div class="column is-1 is-hidden-mobile"></div>
 <div class="column is-8">
-<article class=content id=post-content><h2 id=前言>前言</h2>
-<p>這篇文件在介紹如何建立ssh的金鑰組並透過這組金鑰登入遠端的伺服器，來解決使用VS Code直接遠端開發時會需要一直輸入密碼的困擾。</p>
-<h2 id=1-建立金鑰>1. 建立金鑰</h2>
-<p>首先要建立一組金鑰，打開terminal輸入</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ssh-keygen -t ed25519
-</code></pre></div><p><code>-t</code>可以指定演算法。
-接著會詢問你要儲存的地方和名稱，直接按enter跳過的話，預設會存在使用者目錄下的<code>.ssh</code>目錄下。
-名稱會是：</p>
-<ul>
-<li>public key <code>id_ed25519.pub</code></li>
-<li>private key <code>id_ed25519</code></li>
-</ul>
-<p>同時還會詢問你是否要設定<code>passphrase</code>，像是通關密語。有設定的話，使用這把key登入時就要輸入。這邊可以直接按enter跳過。</p>
-<h2 id=2-放到遠端伺服器>2. 放到遠端伺服器</h2>
-<p>當建立好public key和private key後，接下來只要透過<code>ssh-copy-id</code>將public key安裝到遠端伺服器上就完成了。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ssh-copy-id -i ~/.ssh/your_key.pub user@host
-</code></pre></div><p><code>user@host</code>改成你的帳號和遠端伺服器的ip或domain。</p>
-<h2 id=3-使用private-key登入遠端伺服器>3. 使用private key登入遠端伺服器</h2>
-<p>當上述步驟都完成後可以直接透過 <code>-i</code> 指定private key的位置ssh登入遠端伺服器。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ssh -i ~/.ssh/your_key user@host
-</code></pre></div><h2 id=人生不如意十之八九>人生不如意十之八九</h2>
-<p>當前兩步驟做完後第三步驟卻還是無法登入時可以看看遠端伺服器的sshd可能沒有設定接受public key的驗證方式，檢查伺服器的<code>/etc/ssh/sshd_config</code>檔案中有看到下面這行</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>PubkeyAuthentication yes
-</code></pre></div><p>如果是 <code>false</code> 的話改完重啟<code>sshd</code>服務，再試試看。
-如果還是不行，在伺服器端可以使用</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sshd -d
-</code></pre></div><p>開啟debug模式，看看是哪邊的問題。詳細內容參考 <a href=https://www.ssh.com/academy/ssh/sshd>sshd</a></p>
+<article class=content id=post-content><p>I am an software engineer.</p>
 </article>
-</div>
-<div class="column is-hidden-mobile">
-<div class=sidebar id=toc>
-<div class="post post-toc" id=post-toc>
-</div>
-</div>
 </div>
 </div>
 </div>
