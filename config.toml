@@ -1,21 +1,21 @@
 baseURL = 'https://blog.rfaychen.com/'
 languageCode = 'en'
 DefaultContentLanguage = "zh-tw"
-title = '404 Not Found'
+title = 'Footprints'
 theme = "hulga"
 paginate = 10
 
 [params]
   # show in HTML meta tag
-  author = "xxx"
+  author = "陳智育"
   keywords = "HTML, hugo, CSS"
-  description = "xxx's blog, xxx xx xxxx"
+  # description = "xxx's blog, xxx xx xxxx"
 
   # change bulma's primary color
   primaryColor = "#1793d0"
 
   # subtitle on homepage
-  subtitle = "This is a subtitle"
+  subtitle = "Trying to leave something behind."
 
   # copyright text on footer
   copyright = "Copyright © 2022 wlh. All rights reserved."
@@ -51,18 +51,18 @@ paginate = 10
 
 [menu]
   [[menu.main]]
-    identifier = "index"
-    name = "首页"
+    identifier = "home"
+    name = "Home"
     url = "/"
     weight = 1
   [[menu.main]]
     identifier = "archives"
-    name = "归档"
+    name = "Archive"
     url = "/archives/"
     weight = 2
   [[menu.main]]
     identifier = "about"
-    name = "关于"
+    name = "@智育"
     url = "/about/"
     weight = 3
 
