@@ -67,3 +67,8 @@ category = "categories"
 tag = "tags"
 
 googleAnalytics = "G-H6V37Y5E7Z"
+
+[sitemap]
+  changefreq = 'monthly'
+  filename = 'sitemap.xml'
+  priority = 0.5
